@@ -14,6 +14,7 @@ dependencies:
   - pip
   - pip:
       - tner==0.2.17
+      - urlextract==1.8.0
   - conda-forge::python=3.10.6
   - conda-forge::python-chromedriver-binary=2.42.0
   - conda-forge::pytest=7.1.2
