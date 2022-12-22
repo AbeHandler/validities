@@ -2,7 +2,7 @@
 
 #SBATCH --partition=ami100
 #SBATCH --job-name=conda
-#SBATCH --gres=gpu
+#SBATCH --gres=gpu:1
 #SBATCH --time=14:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
