@@ -11,5 +11,4 @@
 source /curc/sw/anaconda3/latest
 
 module load conda
-
-conda env create -f config/causaldsr.yml
+make conda
