@@ -15,5 +15,6 @@ dependencies:
   - conda-forge::python-chromedriver-binary=2.42.0
   - conda-forge::pytest=7.1.2
   - conda-forge::scikit-learn=1.1.2
+  - conda-forge::spacy=3.4.3
   - conda-forge::tqdm=4.64.1
 prefix: /home/ubuntu/anaconda3
