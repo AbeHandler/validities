@@ -9,5 +9,5 @@
 module load anaconda
 
 module load cuda/11.4
-anaconda activate causaldsr
+conda activate causaldsr
 python tmp.py
