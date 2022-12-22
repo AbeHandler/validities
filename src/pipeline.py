@@ -5,7 +5,7 @@ import json
 import configparser
 
 
-if __name__ == "__main__":
+def train():
     for i in range(1, 4):
         outputdir = f"output/{i}"
         path = pathlib.Path(outputdir)
@@ -17,11 +17,10 @@ if __name__ == "__main__":
               output_path=f'output/{i}',
               overrides={"paths.train": "./wnut/wnut16/data/train.spacy",
                          "components.ner.model.hidden_width": i * 100,
-                         "paths.dev": "./wnut/wnut16/data/dev.spacy"})
+                         "paths.dev": "./wnut/wnut16/data/dev.products.spacy"})
 
 
-
-
+def read_results():
     all_scores = []
 
     for i in range(1, 4):
@@ -33,3 +32,14 @@ if __name__ == "__main__":
             scores = dt['performance']["ents_per_type"]["product"]
             scores["hidden_width"] = hidden_width
             all_scores.append(scores)
+
+    return all_scores
+
+
+if __name__ == "__main__":
+    train()
+    all_scores = read_results()
+    print(all_scores)
+
+
+
