@@ -5,8 +5,8 @@ import json
 import configparser
 
 
-def train():
-    for i in range(1, 4):
+def training_hyperparams():
+    for i in [1, 2, 10, 100, 300]:
         outputdir = f"output/{i}"
         path = pathlib.Path(outputdir)
         if path.is_dir():
@@ -15,8 +15,9 @@ def train():
         
         train("./config/spacy/ner/config.cfg",
               output_path=f'output/{i}',
-              overrides={"paths.train": "./wnut/wnut16/data/train.spacy",
-                         "components.ner.model.hidden_width": i * 100,
+              overrides={"paths.train": "./wnut/wnut16/data/train.products.spacy",
+                         "components.ner.model.hidden_width": i, #this only works on efficient model
+                         "components.ner.model.maxout_pieces": 1,
                          "paths.dev": "./wnut/wnut16/data/dev.products.spacy"})
 
 
@@ -37,7 +38,7 @@ def read_results():
 
 
 if __name__ == "__main__":
-    train()
+    training_hyperparams()
     all_scores = read_results()
     print(all_scores)
 
