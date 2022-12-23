@@ -9,5 +9,7 @@
 
 module load anaconda
 
+conda env remove -n causaldsr
+conda env create -f config/causaldsr.yml
 conda activate causaldsr
 python scripts/tner.py
