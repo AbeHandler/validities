@@ -8,6 +8,8 @@
 
 module load anaconda
 
-module load cuda/11.4
-conda activate causaldsr
+module load cuda/11.3
+conda create -name gpu
+conda activate gpu
+conda install pytorch==1.12.0 torchvision==0.13.0 torchaudio==0.12.0 cudatoolkit=11.3 -c pytorch
 python tmp.py
