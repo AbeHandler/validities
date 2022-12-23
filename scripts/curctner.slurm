@@ -9,6 +9,5 @@
 
 module load anaconda
 
-make conda
 conda activate causaldsr
 python scripts/tner.py
