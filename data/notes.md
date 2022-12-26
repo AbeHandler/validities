@@ -1,0 +1,1 @@
+ebikes.RC_2022-10.gz is a from `data/reddit` running the grep script on Dec 26, 2022 for "ebikes" and then filtering to just the ebike subreddit. Only using data from the 2022-10 file.

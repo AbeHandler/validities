@@ -3,6 +3,7 @@ import pathlib
 import shutil
 import json
 import configparser
+import pandas as pd
 
 
 def training_hyperparams():
@@ -24,7 +25,7 @@ def training_hyperparams():
 def read_results():
     all_scores = []
 
-    for i in range(1, 4):
+    for i in [1, 2, 10, 100, 300]:
         with open(f"output/{i}/model-best/meta.json", 'r') as inf:
             dt = json.load(inf)
             config = configparser.RawConfigParser()
@@ -34,13 +35,13 @@ def read_results():
             scores["hidden_width"] = hidden_width
             all_scores.append(scores)
 
-    return all_scores
+    return pd.DataFrame(all_scores)
 
 
 if __name__ == "__main__":
-    training_hyperparams()
+    #training_hyperparams()
     all_scores = read_results()
-    print(all_scores)
+    all_scores.to_csv("output/scores.csv")
 
 
 
