@@ -90,21 +90,21 @@ document.add_paragraph(
 )
 
 p = document.add_paragraph(
-    'If you are looking for a specific make/model, search for the make/model on the web and include a link to the specific make/model page from the manufacturers website.', style="List Bullet"
+    "Search for the make/model (or manufacturer) on the web and include a link to the specific make/model page from the manufacturer's website.", style="List Bullet"
 )
 p = document.add_paragraph(style="List Bullet")
-p.add_run(' Be sure to find the page from the manufacturer. There are lots of pages listing ebikes for sale online. The goal is the find the page from the manufacturer.').bold = True
+p.add_run('Be sure to find the page from the manufacturer. There are lots of pages listing ebikes for sale online. The goal is the find the page from the manufacturer.').bold = True
 
 p = document.add_paragraph(
     'In many cases, there will be many mentions of different ebikes on the same reddit thread. You should identify every single mention of an ebike make/model or manufacturer on the thread. ', style="List Bullet"
 )
 
 p = document.add_paragraph(style="List Bullet")
-p.add_run(' If a make/model or manufacturer is listed twice, please include every single reference of the make/model or manufacturer. ').bold = True
+p.add_run('If a make/model or manufacturer is listed twice, please include every single reference of the make/model or manufacturer. ').bold = True
 
 
 document.add_paragraph(
-    'The example below should help clarify this task. But please ask questions if you more confused.', style="List Bullet"
+    'The example below should help clarify this task. But please ask questions if you more confused. If you are not sure what to do in a certain circumstance, leave a comment in the doc.', style="List Bullet"
 )
 
 document.add_heading(f'Example', level=1)
@@ -115,16 +115,17 @@ p = document.add_paragraph()
 
 hyperlink = add_hyperlink(p, example, example, 'blue', False)
 
-document.add_paragraph(
-    'Start by clicking the URL. The first comment references the Riese & Muller Multicharger.', style="List Bullet"
+p = document.add_paragraph(
+    'Start by clicking the URL for the reddit thread. The first comment references the Riese & Muller Multicharger.', style="List Bullet"
 )
 
 document.add_picture('example1.png', height=Inches(1))
 
-document.add_paragraph(
+p = document.add_paragraph(
     'If you search for this online, you can find the manufacturer website for this make/model.', style="List Bullet"
 )
 
+p = document.add_paragraph(style="List Bullet")
 
 hyperlink = add_hyperlink(p,
                           "https://www.r-m.de/en-us/bikes/multicharger/", 
@@ -137,7 +138,7 @@ p = document.add_paragraph(
 )
 p.add_run(' exact ').bold = True
 
-p.add_run(' text from the reddit thread and linking to the manufacturer.').bold = False
+p.add_run('text from the reddit thread and linking to the manufacturer, like this:').bold = False
 
 p = document.add_paragraph(style="List Bullet")
 
@@ -166,13 +167,25 @@ hyperlink = add_hyperlink(p, "https://yubabikes.com/cargobikestore/mundo-electri
                              "Yuba mundo bike",
                              'blue', True)
 
-p = document.add_paragraph("The first link should go to the manufacturer, because the text ('Yuba') just references a manufacturer.", style="List Bullet")
+p = document.add_paragraph("Notice that the first link goes go to the manufacturer, because the text ('Yuba') just references a manufacturer.", style="List Bullet")
 
-p = document.add_paragraph("The second link should go to the specific make/model 'Yuba mondo bike'. Notice that the reddit commenter does not describe the bike using the exact same string as the manufacturer, who calls the bike a 'Mundo EP8'. This is very common. You may have to use your judgment and do a little searching around online to figure out which bike you think the commenter is talking about.", style="List Bullet")
+p = document.add_paragraph("Notice that the second link should goes to the page for the specific make/model, the 'Yuba mondo bike'.",  style='List Bullet')
+
+p = document.add_paragraph("Notice also that the reddit commenter does not describe the bike using the exact same string as the manufacturer, who calls the bike a 'Mundo EP8'. This is very common. You may have to use your judgment and do a little searching around online to figure out which bike you think the commenter is talking about.", style="List Bullet")
 
 p = document.add_paragraph("The actual page you submit should look like this: ", style="List Bullet")
 
 p = document.add_heading(f'Example', level=1)
+
+example = "https://www.reddit.com/r/ebikes/comments/yaz4wv/need_an_e_bike_that_i_can_throw_2_kids_on_the/"
+
+
+p = document.add_paragraph(style="List Bullet")
+
+hyperlink = add_hyperlink(p,
+                          example,
+                          example,
+                          'blue', True)
 
 p = document.add_paragraph(style="List Bullet")
 
@@ -182,7 +195,7 @@ hyperlink = add_hyperlink(p, "https://www.r-m.de/en-us/bikes/multicharger/",
 p = document.add_paragraph(style="List Bullet")
 
 hyperlink = add_hyperlink(p, "https://yubabikes.com/cargobikestore/mundo-electric/",
-                             "Yuba mundo bike",
+                             "Yuba",
                              'blue', True)
 
 p = document.add_paragraph(style="List Bullet")
