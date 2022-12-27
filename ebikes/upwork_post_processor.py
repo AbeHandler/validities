@@ -94,7 +94,7 @@ class Processor(object):
         ngrams = self.tok.get_ngrams(tokens)
         return URL(url, tokens, ngrams)
 
-nltk.download('punkt')
+nltk.download('punkt', quiet=True)
 
 docx = DocX()
 hyperlinks = docx.get_links()
@@ -114,3 +114,4 @@ for product, url in links[1:]:
     tok = tokenizer.tokenize(comments_about_product)
     reddit_ngrams = tokenizer.get_ngrams(tokens=tok)
     mention = ProductMention(url, product, comments_about_product, reddit_ngrams)
+    print(url)
