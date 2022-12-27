@@ -82,40 +82,30 @@ document.add_paragraph(
 document.add_picture('comments.png', height=Inches(1))
 
 document.add_paragraph(
-    'Read all of the comments and look for any time a specific ebike brand or ebike make/model is mentioned', style='List Bullet'
+    'Read all of the comments and look for any time a specific ebike manufacturer or ebike make/model is mentioned', style='List Bullet'
 )
 
 document.add_paragraph(
-    'Copy and paste the exact text that references the ebike make/model brand', style='List Bullet'
-)
-
-document.add_paragraph(
-    'Write brand if the text references an ebike brand.', style='List Bullet'
-)
-
-document.add_paragraph(
-    'Write make/model is if it is a specific make or model.', style="List Bullet"
-)
-
-document.add_paragraph(
-    'If you see that both a make/model and brand is mentioned, please use the make/model because it is more specific.', style="List Bullet"
+    'Copy and paste the exact text that references the ebike make/model or manufacturer', style='List Bullet'
 )
 
 p = document.add_paragraph(
     'If you are looking for a specific make/model, search for the make/model on the web and include a link to the specific make/model page from the manufacturers website.', style="List Bullet"
 )
+p = document.add_paragraph(style="List Bullet")
 p.add_run(' Be sure to find the page from the manufacturer. There are lots of pages listing ebikes for sale online. The goal is the find the page from the manufacturer.').bold = True
 
-document.add_paragraph(
+p = document.add_paragraph(
     'In many cases, there will be many mentions of different ebikes on the same reddit thread. You should identify every single mention of an ebike make/model or manufacturer on the thread. ', style="List Bullet"
 )
+
+p = document.add_paragraph(style="List Bullet")
+p.add_run(' If a make/model or manufacturer is listed twice, please include every single reference of the make/model or manufacturer. ').bold = True
+
 
 document.add_paragraph(
     'The example below should help clarify this task. But please ask questions if you more confused.', style="List Bullet"
 )
-
-p.add_run(' If a make/model or manufacturer is listed twice, please include every single reference of the make/model or manufacturer. ').bold = True
-
 
 document.add_heading(f'Example', level=1)
 
