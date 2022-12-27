@@ -88,7 +88,7 @@ document.add_paragraph(
     'The example below should help clarify this task. But please ask questions if you more confused. If you are not sure what to do in a certain circumstance, leave a comment in the doc.', style="List Bullet"
 )
 
-document.add_heading(f'Example', level=1)
+document.add_heading(f'Example (detailed)', level=1)
 
 example = "https://www.reddit.com/r/ebikes/comments/yaz4wv/need_an_e_bike_that_i_can_throw_2_kids_on_the/"
 
@@ -154,7 +154,7 @@ p = document.add_paragraph("Notice also that the reddit commenter does not descr
 
 p = document.add_paragraph("The actual page you submit should look like this: ", style="List Bullet")
 
-p = document.add_heading(f'Example (detailed)', level=1)
+p = document.add_heading(f'Example', level=1)
 
 example = "https://www.reddit.com/r/ebikes/comments/yaz4wv/need_an_e_bike_that_i_can_throw_2_kids_on_the/"
 
@@ -195,6 +195,5 @@ with open("sample.txt", 'r') as inf:
         p = document.add_paragraph()
 
         hyperlink = add_hyperlink(p, i, i)
-
 
         document.save('demo.docx')
