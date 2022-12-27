@@ -68,7 +68,7 @@ document.add_heading('Instructions', 0)
 
 instructions = '''
 In this task, you will read reddit posts about ebikes and extract information about the 
-specific bikes on the thread. Specifically you should do the following: '''
+specific bikes and bike manufacturers on the thread. Specifically you should do the following: '''
 
 p = document.add_paragraph(instructions)
 
@@ -82,7 +82,7 @@ document.add_paragraph(
 document.add_picture('comments.png', height=Inches(1))
 
 document.add_paragraph(
-    'Read all of the comments and look for any time a specific ebike brand or ebike make and model is mentioned', style='List Bullet'
+    'Read all of the comments and look for any time a specific ebike brand or ebike make/model is mentioned', style='List Bullet'
 )
 
 document.add_paragraph(
@@ -159,9 +159,11 @@ p = document.add_paragraph("Now proceed to the next comment", style="List Bullet
 document.add_picture('example2.png', height=Inches(1))
 
 p = document.add_paragraph(
-    '''There is one mention of a manufacturer ('Yuba'), and one mention of a make/model ('Yuba mundo bike'). You should add them both, like this: ''', 
+    '''There is one mention of a manufacturer ('Yuba'), and one mention of a make/model ('Yuba mundo bike'). You should add them both by copying and pasting the ''', 
         style="List Bullet")
 
+p.add_run('exact').bold = True
+p.add_run(" text from the thread, like this: ")
 
 p = document.add_paragraph(style="List Bullet 2")
 p.paragraph_format.left_indent = Inches(0.25)
