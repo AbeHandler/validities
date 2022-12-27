@@ -7,6 +7,9 @@ import json
 import docxpy
 from dataclasses import dataclass
 from typing import List
+from colorama import Fore
+from colorama import Style
+
 
 class DocX(object):
 
@@ -61,7 +64,7 @@ class Reddit(object):
         return out
 
     @staticmethod
-    def get_comments_mentioning_product(comments, product):
+    def get_comments_mentioning_product_and_flatten(comments, product):
         out = []
         for o in comments:
             if product in o["body"]:
@@ -88,10 +91,10 @@ class Processor(object):
         self.w2t = Webpage2Text()
         self.tok = Tokenizer()
     
-    def process_url(self, url):
+    def process_url_string_to_object(self, url, N: int=2):
         text = self.w2t.get_text(url)
         tokens = self.tok.tokenize(text)
-        ngrams = self.tok.get_ngrams(tokens)
+        ngrams = self.tok.get_ngrams(tokens, N)
         return URL(url, tokens, ngrams)
 
 nltk.download('punkt', quiet=True)
@@ -101,17 +104,26 @@ hyperlinks = docx.get_links()
 links = hyperlinks[5:9]
 
 reddit = Reddit()
+
+print('\033[39m')
+print(Fore.RED + 'Warning: The post yaz4wv is hard coded.')
+print(Fore.WHITE + "")
+
 comments = reddit.get_comments_for_link_id("yaz4wv")
 
 w2t = Webpage2Text()
 tokenizer = Tokenizer()
 processor = Processor(w2t, tokenizer)
 
+
 for product, url in links[1:]:
     product = product.decode()
-    url = processor.process_url(url)
-    comments_about_product: str = reddit.get_comments_mentioning_product(comments, product=product)
-    tok = tokenizer.tokenize(comments_about_product)
+    url = processor.process_url_string_to_object(url)
+    comments_about_product_flattend: str = reddit.get_comments_mentioning_product_and_flatten(comments, product=product)
+    tok = tokenizer.tokenize(comments_about_product_flattend)
     reddit_ngrams = tokenizer.get_ngrams(tokens=tok)
-    mention = ProductMention(url, product, comments_about_product, reddit_ngrams)
-    print(url)
+    mention = ProductMention(url, product, comments_about_product_flattend, reddit_ngrams)
+
+    print("****")
+    print(product)
+    print(set(url.ngrams) & set(reddit_ngrams))

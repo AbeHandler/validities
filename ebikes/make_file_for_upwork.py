@@ -172,7 +172,7 @@ hyperlink = add_hyperlink(p, "https://www.r-m.de/en-us/bikes/multicharger/",
 
 p = document.add_paragraph(style="List Bullet")
 
-hyperlink = add_hyperlink(p, "https://yubabikes.com/cargobikestore/mundo-electric/",
+hyperlink = add_hyperlink(p, "https://yubabikes.com/",
                              "Yuba")
 
 p = document.add_paragraph(style="List Bullet")
@@ -197,3 +197,13 @@ with open("sample.txt", 'r') as inf:
         hyperlink = add_hyperlink(p, i, i)
 
         document.save('demo.docx')
+
+        print("saved demo.docx")
+
+print(10 * "*")
+
+print("IMPORTANT!")
+
+print("Save the outputfile (demo.docx) as a .doc file. Otherwise Google docs messes up the link structure")
+
+print(10 * "*")
