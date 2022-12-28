@@ -5,6 +5,10 @@ test:
 
 	cd gp && conda run -n causaldsr --no-capture-output pytest test --disable-warnings && cd ..
 
+.PHONY: machine
+machine: # setup machine
+	brew install rust
+
 .PHONY: conda
 conda:
 	conda env update --file config/causaldsr.yml --prune -n causaldsr
@@ -23,7 +27,6 @@ wnut/wnut16/data/dev.products.spacy:
 	python -m spacy convert -n 10  ./wnut/wnut16/data/test.conll ./wnut/wnut16/data/
 	python -m spacy convert -n 10  ./wnut/wnut16/data/dev.products.conll ./wnut/wnut16/data/
 	python -m spacy convert -n 10  ./wnut/wnut16/data/train.products.conll ./wnut/wnut16/data/
-
 
 .PHONY: clean
 train: wnut/wnut16/data/dev.products.spacy
