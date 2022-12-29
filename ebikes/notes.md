@@ -56,6 +56,8 @@ If you Google "Social media listening" "value proposition" you will find many tu
 Blog post + reddit ads. Measure click thru.
 Reddit ads. Realistic stuff. A/B test different value props. See which value props they find.
 
+They have to choose from the list. Or have to choose based on the social media posts. Then you can run A/B on all of them and pick the best one. If the recall is bad the person may miss it.
+
 #### What is the task?
 
 - Limit to threads in which a person asks for a recommendation for a bike. Use only the title of the thread.
