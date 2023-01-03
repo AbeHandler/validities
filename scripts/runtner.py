@@ -11,6 +11,9 @@ print("unset LD_LIBRARY_PATH")
 print("export LD_LIBRARY_PATH=/projects/abha4861/software/anaconda/envs/causaldsr/lib")
 print("conda activate causaldsr")
 print("python runtner.py")
+print("to run vim again do unset LD_LIBRARY_PATH")
+
+print("https://huggingface.co/tner/bertweet-base-tweetner7-2020")
 
 
 def format_tweet(tweet):
