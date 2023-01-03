@@ -23,7 +23,9 @@ We exclude posts where the person will DIY their own bike. We also exclude posts
 
 We then identified 499 Reddit comments from the 20 titled threads.
 
-We passed these to MTurk. We asked turkers to identify the first 3 ebikes on the comment. We had turkers extract the exact string from the comment that referenced an ebike.
+We passed these to MTurk. We asked turkers to identify the first 3 ebikes on the comment. We had turkers extract the exact string from the comment that referenced an ebike. To make the turk file, we did 
+
+`$ echo "url" > turk.csv && cat recs.txt >> turk.csv`
 
 From there, we can compute P/R etc. for each of these models. This is $\phi^P_p$.
 
