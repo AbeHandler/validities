@@ -6,6 +6,12 @@ To take the initial sample on Dec 27, 2022 do the following:
 
 Why ebikes? it is a booming industry.
 
+#### March 22, 23
+
+Abe sent this to Lan
+
+`gunzip -c ebikes.RC_2022-10.gz | grep -f recs.txt > to_lan.jsonl`
+
 #### Step 1
 
 `make prelims`
